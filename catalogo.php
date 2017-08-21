@@ -29,8 +29,7 @@ session_start();
 <? // include('menu.php'); ?>
 
     <div class="container" id="argumentos">
-	    
-	    
+
 		<header>
 		    <span><?= $campana; ?></span>
 	    </header>
