@@ -1,0 +1,28 @@
+{
+	"url":"http://dev.iscrmktg.com/resumen-campana.php?camID=1",
+	"renderType":"pdf",
+	"renderSettings": {
+				"quality": 70,
+				"pdfOptions": {
+					"border": null,
+					"footer": {
+						"firstPage": null,
+						"height": "1cm",
+						"onePage": null,
+						"repeating": "%pageNum%/%numPages%"
+					},
+					"format": "letter",
+					"header": null,
+					"height": "1.2cm",
+					"orientation": "portrait"
+				},
+				"clipRectangle": null,
+				"renderIFrame": null,
+				"viewport": {
+					"height": 1280,
+					"width": 1280
+				},
+				"zoomFactor": 1,
+				"passThroughHeaders": false
+			}
+}
