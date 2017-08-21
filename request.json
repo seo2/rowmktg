@@ -1,5 +1,5 @@
 {
-	"url":"http://dev.iscrmktg.com/resumen-campana.php?camID=1",
+	"url":"http://dev.rowmktg.cl/resumen-campana.php?camID=1",
 	"renderType":"pdf",
 	"renderSettings": {
 				"quality": 70,

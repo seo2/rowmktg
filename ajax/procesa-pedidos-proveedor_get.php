@@ -18,7 +18,7 @@ require_once("../functions.php");
 			$to			= $u['usuMail'];
 		
 			$message  = '<html><head></head><body style="font-family: Helvetica, Arial, sans-serif;">';
-			$message .= '<div><img src="http://iscrmktg.com/assets/img/cabeceramail.png"></div>';
+			$message .= '<div><img src="http://rowmktg.cl/assets/img/cabeceramail.png"></div>';
 			
 			
 			$message .= '<h3>Resumen Pedidos Proveedor del '.$date.'</h3>';
@@ -93,19 +93,19 @@ require_once("../functions.php");
 								}
 								$message .= "<div class='posevento fotospedido'>";
 								$message .= "<span>Imagen ref. Cat&aacute;logo:</span><br>";
-								$message .= "<img src='http://iscrmktg.com/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
+								$message .= "<img src='http://rowmktg.cl/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
 								$message .= "</div>";
 							}else{
 								$camfile = $r['ptdISC'];
 								$message .= "<div class='posevento fotospedido'>";
 								$message .= "<span>Imagen ref. ISC</span><br>";
-								$message .= "<img src='http://iscrmktg.com/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
+								$message .= "<img src='http://rowmktg.cl/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
 								$message .= "</div>";
 						 	} 
 							if($r['ptdFoto']){	
 								$message .= "<div class='posevento fotospedido'>";
 								$message .= "<span>Foto:</span><br>";
-								$message .= "<img src='http://iscrmktg.com/resize3.php?img=ajax/uploads/".$r['ptdFoto']."&width=300&height=300&mode=fit' class='img-responsive'>";	
+								$message .= "<img src='http://rowmktg.cl/resize3.php?img=ajax/uploads/".$r['ptdFoto']."&width=300&height=300&mode=fit' class='img-responsive'>";	
 								$message .= "</div>";
 							} 
 
@@ -145,7 +145,7 @@ require_once("../functions.php");
 		    			}
 			    	}
 					$message .='</div>';	
-					$message .='<div ><a style="padding:10px 20px; background: #000; color:#fff; display: block; margin:10px auto; width:100px; text-align: center; text-decoration:none;" href="http://iscrmktg.com/">Ir al sitio</a></div>';
+					$message .='<div ><a style="padding:10px 20px; background: #000; color:#fff; display: block; margin:10px auto; width:100px; text-align: center; text-decoration:none;" href="http://rowmktg.cl/">Ir al sitio</a></div>';
 					$message .= "<div style='height:50px; background: #0084D6; margin-bottom:40px;'>";	
 					$message .= "</div>";	
 		
@@ -155,7 +155,7 @@ require_once("../functions.php");
 			
 			
 			$subject = 'Pedidos de VM Adidas '.$date.'';
-			$headers = "From: Adidas Retail Marketing <no-reply@iscrmktg.com>\r\n";
+			$headers = "From: Reebok Onretail Wholesale Marketing <no-reply@rowmktg.cl>\r\n";
 			if($provMail){
 			//	$headers .= "CC: ".$provMail."\r\n";
 			}

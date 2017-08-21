@@ -35,7 +35,7 @@
 <div style="font-family: Helvetica, Arial, sans-serif; color: #000; max-width:655px; margin: 0 auto; ">
 	    
 	<div style="text-align:center">
-	    <img src="http://armktg.cl/assets/img/logo.png" width="100">
+	    <img src="http://rowmktg.cl/assets/img/logo.png" width="100">
 	</div>
 	    
 	<div style="color: #000; height: 20px; line-height: 20px; text-transform: uppercase; font-weight: 100; padding-left:9px">
@@ -107,7 +107,7 @@
 					?>					
 					<div style="margin: 0 10px 10px 0;  width: 300px; float: left; border: 1px solid #ccc; padding: 5px">
 						
-						<img src='http://dev.armktg.cl/resize2.php?img=ajax/uploads/<?php echo $clxtdfFile; ?>&width=400&height=400&mode=fit' style="width: 100%; height: auto;">		
+						<img src='http://dev.rowmktg.cl/resize2.php?img=ajax/uploads/<?php echo $clxtdfFile; ?>&width=400&height=400&mode=fit' style="width: 100%; height: auto;">		
 					
 					</div>				
 					<?

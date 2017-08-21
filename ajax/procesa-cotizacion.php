@@ -31,7 +31,7 @@ $ptdProv 	= $_POST['ptdProv'];
     }else{
 		$subject = 'Cotizaci&oacute;n Pedido N&ordm; '.$ptID;
     } 
-	$headers = "From: " . "<no-reply@iscrmktg.com> Adidas Retail Marketing" . "\r\n";
+	$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Onretail Wholesale Marketing" . "\r\n";
 	$headers .= "CC: mc@seo2.cl\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -59,7 +59,7 @@ $ptdProv 	= $_POST['ptdProv'];
 			$i 		= 0;
 				
 			$message  = '<html><head></head><body style="font-family: Helvetica, Arial, sans-serif;">';
-			$message .= '<div><img src="http://iscrmktg.com/assets/img/cabeceramail.png"></div>';
+			$message .= '<div><img src="http://rowmktg.cl/assets/img/cabeceramail.png"></div>';
 		    if($paisID==7){
 				$message .= '<h3>Cota&ccedil;&atilde;o de Pedido N&ordm;'.$ptID.'</h3>';
 		    }else{
@@ -145,7 +145,7 @@ $ptdProv 	= $_POST['ptdProv'];
 							    }else{
 									$message .= "<span>Imagen de Cat&aacute;logo:</span><br>";
 							    } 
-								$message .= "<img src='http://iscrmktg.com/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
+								$message .= "<img src='http://rowmktg.cl/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
 								$message .= "</div>";
 							}else{
 								$camfile = $r['ptdISC'];
@@ -155,13 +155,13 @@ $ptdProv 	= $_POST['ptdProv'];
 							    }else{
 									$message .= "<span>Imagen ISC</span><br>";
 							    } 
-								$message .= "<img src='http://iscrmktg.com/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
+								$message .= "<img src='http://rowmktg.cl/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
 								$message .= "</div>";
 						 	} 
 							if($r['ptdFoto']){	
 								$message .= "<div class='posevento fotospedido'>";
 								$message .= "<span>Foto:</span><br>";
-								$message .= "<img src='http://iscrmktg.com/resize3.php?img=ajax/uploads/".$r['ptdFoto']."&width=300&height=300&mode=fit' class='img-responsive'>";	
+								$message .= "<img src='http://rowmktg.cl/resize3.php?img=ajax/uploads/".$r['ptdFoto']."&width=300&height=300&mode=fit' class='img-responsive'>";	
 								$message .= "</div>";
 							} 
 
@@ -201,7 +201,7 @@ $ptdProv 	= $_POST['ptdProv'];
 		    			}
 			    	}
 					$message .='</div>';	
-					$message .='<div ><a style="padding:10px 20px; background: #000; color:#fff; display: block; margin:10px auto; width:100px; text-align: center; text-decoration:none;" href="http://iscrmktg.com/">Ir al sitio</a></div>';
+					$message .='<div ><a style="padding:10px 20px; background: #000; color:#fff; display: block; margin:10px auto; width:100px; text-align: center; text-decoration:none;" href="http://rowmktg.cl/">Ir al sitio</a></div>';
 					$message .= "<div style='height:50px; background: #0084D6; margin-bottom:40px;'>";	
 					$message .= "</div>";	
 		

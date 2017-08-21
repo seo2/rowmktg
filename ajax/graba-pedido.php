@@ -17,29 +17,8 @@ $ptdAlerta	= $_POST['ptdAlerta'];
 $ptdISC		= $_POST['isc'];
 
 
-if($paisID==1){
-	$formInstore = get_formato_pieza($formID,$ptdGra); // así estaba antes
-	//$formInstore = $formID;
-	$ptdProv   = 0;
-}elseif($paisID==2){
 	$formInstore = $formID;
 	$ptdProv   = 0;
-}elseif($paisID==3){
-	$formInstore = $formID;
-	$ptdProv   = 0;
-}elseif($paisID==4){
-	$formInstore = $formID;
-	$ptdProv   = 0;
-}elseif($paisID==5){
-	$formInstore = $formID;
-	$ptdProv   = 0;
-}elseif($paisID==6){
-	$formInstore = $formID;
-	$ptdProv   = 0;
-}elseif($paisID==7){
-	$formInstore = $formID;
-	$ptdProv   = 0;
-}
 
 if($paisID==1){
 	date_default_timezone_set('America/Santiago');
@@ -59,9 +38,11 @@ if($paisID==1){
 $ahora = date("Y-m-d H:i:s");
 
 $ptdRes	= get_responsable_tienda($paisID,$ptTie);
-if($ptdRes==''){
+if($ptdRes==0){
 	$ptdRes = get_responsable_formato($paisID, $formInstore);
 }
+
+//echo $ptdRes;
 
 if($_POST['ptID'] && $_POST['ptdItem']){
 	
@@ -155,8 +136,7 @@ if($_POST['ptID'] && $_POST['ptdItem']){
 			"ptdFoto" 	=> $itemFoto,
 			"ptdRes" 	=> $ptdRes,
 			"ptdVM" 	=> $ptVM,
-			"ptdTS" 	=> $ahora,
-			"ptdV2" 	=> 1
+			"ptdTS" 	=> $ahora
 		);	
 			
 //	print_r( $data);

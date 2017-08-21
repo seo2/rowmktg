@@ -1463,6 +1463,7 @@ function get_zona($clID){
 	
 	
 	function get_responsable_tienda($paisID,$tieID){
+		$tieFono = 0;
 		$db = MysqliDb::getInstance();
 		$tema = $db->rawQuery('select * from tiendas where paisID = '.$paisID.' and tieID = '.$tieID);
 		if($tema){

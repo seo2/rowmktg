@@ -52,7 +52,7 @@ $ptdRes 	= $_POST['ptdRes'];
 			$provMail = get_proveedor_mails($usuProv);
 				
 			$message  = '<html><head></head><body style="font-family: Helvetica, Arial, sans-serif;">';
-			$message .= '<div><img src="http://iscrmktg.com/assets/img/cabeceramail.png"></div>';
+			$message .= '<div><img src="http://rowmktg.cl/assets/img/cabeceramail.png"></div>';
 			
 		    if($paisID==7){
 				$message .= '<h3>Confirma&ccedil;&atilde;o Cota&ccedil;&atilde;o Pedido N&ordm; '.$ptID.'</h3>';
@@ -135,7 +135,7 @@ $ptdRes 	= $_POST['ptdRes'];
 							    }else{
 									$message .= "<span>Imagen de Cat&aacute;logo:</span><br>";
 							    } 
-								$message .= "<img src='http://iscrmktg.com/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
+								$message .= "<img src='http://rowmktg.cl/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
 								$message .= "</div>";
 							}else{
 								$camfile = $r['ptdISC'];
@@ -145,13 +145,13 @@ $ptdRes 	= $_POST['ptdRes'];
 							    }else{
 									$message .= "<span>Imagen ISC</span><br>";
 							    } 
-								$message .= "<img src='http://iscrmktg.com/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
+								$message .= "<img src='http://rowmktg.cl/resize2.php?img=".$camfile."&width=300&height=300&mode=fit' class='img-responsive'>";
 								$message .= "</div>";
 						 	} 
 							if($r['ptdFoto']){	
 								$message .= "<div class='posevento fotospedido'>";
 								$message .= "<span>Foto:</span><br>";
-								$message .= "<img src='http://iscrmktg.com/resize3.php?img=ajax/uploads/".$r['ptdFoto']."&width=300&height=300&mode=fit' class='img-responsive'>";	
+								$message .= "<img src='http://rowmktg.cl/resize3.php?img=ajax/uploads/".$r['ptdFoto']."&width=300&height=300&mode=fit' class='img-responsive'>";	
 								$message .= "</div>";
 							}
 								
@@ -190,7 +190,7 @@ $ptdRes 	= $_POST['ptdRes'];
 		    			}
 			    	}
 					$message .='</div>';	
-					$message .='<div ><a style="padding:10px 20px; background: #000; color:#fff; display: block; margin:10px auto; width:100px; text-align: center; text-decoration:none;" href="http://iscrmktg.com/">Ir al sitio</a></div>';
+					$message .='<div ><a style="padding:10px 20px; background: #000; color:#fff; display: block; margin:10px auto; width:100px; text-align: center; text-decoration:none;" href="http://rowmktg.cl/">Ir al sitio</a></div>';
 					$message .= "<div style='height:50px; background: #0084D6; margin-bottom:40px;'>";	
 					$message .= "</div>";	
 		
@@ -205,7 +205,7 @@ $ptdRes 	= $_POST['ptdRes'];
 				$subject = 'Confirmaci&oacute;n Cotizaci&oacute;n Pedido Nº '.$ptID;
 		    }
 		    
-			$headers = "From: " . "<no-reply@iscrmktg.com> Adidas Retail Marketing" . "\r\n";
+			$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Onretail Wholesale Marketing" . "\r\n";
 
 			if($provMail){
 				//$headers .= "CC: ".$provMail."\r\n";

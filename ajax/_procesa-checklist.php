@@ -36,12 +36,12 @@ if ($ajax) {
 		$date 		= date('d/m/Y');
 						
 		$subject = 'Checklist: '.$tienda.' - '.$checklist.' '.$date.'';
-		$headers = "From: " . "<no-reply@armktg.cl> Adidas Retail Marketing" . "\r\n";
+		$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Onretail Wholesale Marketing" . "\r\n";
 		$headers .= "CC: mc@seo2.cl\r\n";
 		$headers .= "MIME-Version: 1.0\r\n";
 		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 		 
-		$email_text = file_get_contents('http://dev.armktg.cl/checklists-mail.php?clxtID='.$clxtID);
+		$email_text = file_get_contents('http://dev.rowmktg.cl/checklists-mail.php?clxtID='.$clxtID);
 	
 		mail($to, $subject, $email_text, $headers);
 	

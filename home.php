@@ -40,7 +40,7 @@ if($_SESSION['todos']['Logged']){
 				<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 cajita" >
 				
 				<h1 class="logo animated fadeIn"><img src="assets/img/rbk.svg" style="margin:10px 0;"></h1>
-				<p class="logo animated fadeInDown">Retail Marketing</p>
+				<p class="logo animated fadeInDown">Onretail Wholesale Marketing</p>
 					<?
 					// 	QUERIES PARA SACAR TOTAL DE PEDIDOS:
 

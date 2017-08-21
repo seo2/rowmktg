@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Adidas - Retail Marketing</title>
+    <title>Adidas - Onretail Wholesale Marketing</title>
 
 	<link rel="icon" type="image/png" href="assets/img/favicon.png" >
 

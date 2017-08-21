@@ -282,37 +282,20 @@
 						
 						$fecen = substr($r['ptdFecEn'],8,2) . '/'. substr($r['ptdFecEn'],5,2) .'/'. substr($r['ptdFecEn'],0,4);
 						
-						if($paisID==1 && $ptID <= 511){
-							$pieza_opc_desc = get_pieza_opc_desc($r['ptdGra'],$r['ptdGraOp']); 
-								
-							if($pieza_opc_desc=='-' || $pieza_opc_desc=='Error'){
-								$pieza = get_pieza_desc($r['ptdGra']);
+
+						if($r['ptdISC']=='fw2017'){
+							$pieza   = get_isc_camp($formID,$r['ptdGra']) .'<br><small>'.get_isc_med($formID,$r['ptdGra']).'</small>';
+						}else{		
+						
+							$pieza_opc_desc = get_instore_opc_desc_v2($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
+							
+							if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
+								$pieza = '<small>'.get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais_v2($paisID, $r['formID'], $r['ptdGra']);
 							}else{
-								$pieza = get_pieza_desc($r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
-							}
-						}else{
-							if($r['ptdISC']=='fw2017'){
-								$pieza   = get_isc_camp($formID,$r['ptdGra']) .'<br><small>'.get_isc_med($formID,$r['ptdGra']).'</small>';
-							}else{		
-								if($r['ptdV2']==1){	
-									$pieza_opc_desc = get_instore_opc_desc_v2($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
-									
-									if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
-										$pieza = '<small>'.get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais_v2($paisID, $r['formID'], $r['ptdGra']);
-									}else{
-										$pieza = '<small>'.get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais_v2($paisID, $r['formID'], $r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
-									}
-								}else{	
-									$pieza_opc_desc = get_instore_opc_desc($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
-									
-									if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
-										$pieza = '<small>'.get_instore_nom_gen( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais($paisID, $r['formID'], $r['ptdGra']);
-									}else{
-										$pieza = '<small>'.get_instore_nom_gen( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais($paisID, $r['formID'], $r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
-									}
-								}		
+								$pieza = '<small>'.get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais_v2($paisID, $r['formID'], $r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
 							}
 						}
+
 
 						$pieEnt = get_pieza_entrega($r['ptdGra']);
 

@@ -6,7 +6,7 @@ $options = array(
     'http' => array(
         'header'  => "Content-type: application/json\r\n",
         'method'  => 'POST',
-        'content' => '{ "url":"http://dev.iscrmktg.com/resumen-campana.php?camID=1", "renderType":"pdf", "renderSettings": { "quality": 70, "pdfOptions": { "border": null, "footer": { "firstPage": null, "height": "1cm", "onePage": null, "repeating": "%pageNum%/%numPages%" }, "format": "letter", "header": null, "height": "1.2cm", "orientation": "portrait" }, "clipRectangle": null, "renderIFrame": null, "viewport": { "height": 1280, "width": 1280 }, "zoomFactor": 1, "passThroughHeaders": false } }'
+        'content' => '{ "url":"http://dev.rowmktg.cl/resumen-campana.php?camID=1", "renderType":"pdf", "renderSettings": { "quality": 70, "pdfOptions": { "border": null, "footer": { "firstPage": null, "height": "1cm", "onePage": null, "repeating": "%pageNum%/%numPages%" }, "format": "letter", "header": null, "height": "1.2cm", "orientation": "portrait" }, "clipRectangle": null, "renderIFrame": null, "viewport": { "height": 1280, "width": 1280 }, "zoomFactor": 1, "passThroughHeaders": false } }'
     )
 );
 $context  = stream_context_create($options);

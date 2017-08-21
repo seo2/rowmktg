@@ -1,4 +1,4 @@
-var url 	= 'http://dev.iscrmktg.com/';
+var url 	= 'http://dev.rowmktg.cl/';
 var uploads = url + 'ajax/uploads/';
 
 

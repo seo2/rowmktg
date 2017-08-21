@@ -21,10 +21,10 @@ if($resultado){
 	foreach ($resultado as $r) {
     	if($r["insOpFoto"]){
 			$ruta 		= 'ajax/uploads/ISC/';
-			$archivo 	= 'http://iscrmktg.com/'.$ruta.$r["insOpFoto"];	    	
+			$archivo 	= 'http://rowmktg.cl/'.$ruta.$r["insOpFoto"];	    	
     	}else{
 			$ruta 		= get_carpeta_ISC($formID);
-			$archivo 	= 'http://iscrmktg.com/'.$ruta.quitatodo($insNomGen).quitatodo($r["insOpNom"]).'.jpg';
+			$archivo 	= 'http://rowmktg.cl/'.$ruta.quitatodo($insNomGen).quitatodo($r["insOpNom"]).'.jpg';
     	}
 	    $json[] = array(
 	    	'Value' 	=> $r["insOpID"], 

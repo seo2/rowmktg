@@ -90,7 +90,10 @@ session_start();
 						$hora  = substr($r['ptdTS'],11,8);
 						
 						
-						if($r['ptdV2']==1){	
+						if($r['ptdISC']=='fw2017'){
+							$pieza   = get_isc_camp($formID,$r['ptdGra']) .'<br><small>'.get_isc_med($formID,$r['ptdGra']).'</small>';
+						}else{		
+						
 							$pieza_opc_desc = get_instore_opc_desc_v2($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
 							
 							if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
@@ -98,15 +101,8 @@ session_start();
 							}else{
 								$pieza = '<small>'.get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais_v2($paisID, $r['formID'], $r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
 							}
-						}else{	
-							$pieza_opc_desc = get_instore_opc_desc($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
-							
-							if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
-								$pieza = '<small>'.get_instore_nom_gen( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais($paisID, $r['formID'], $r['ptdGra']);
-							}else{
-								$pieza = '<small>'.get_instore_nom_gen( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais($paisID, $r['formID'], $r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
-							}
 						}
+
 
 
 						include('include-pedido.php');
