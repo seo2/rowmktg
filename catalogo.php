@@ -15,8 +15,6 @@ session_start();
  <script>
  		window.location.replace("index.php");
  </script>
-	
-
 <?  }  ?>
 <? 
 	include('header.php');
