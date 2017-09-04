@@ -89,22 +89,25 @@ if($_SESSION['todos']['Logged']){
 					    if($paisID==7){
 							$tit 	= "Pedidos";
 							$tit2 	= "Entregas Agendadas";
+							$tit3 	= "Cotações Pendentes";
 					    }else{
 							$tit 	= "Pedidos";
-							$tit2 	= "Entregas Programadas";
-					    } 				
+							$tit2 	= "Pedidos Ongoing";
+							$tit3 	= "Cotizaciones Pendientes";
+					    } 	
+						$sql3   = "SELECT  count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst = 4";			
 					}elseif($usuTipo==2){ // Retail MKTG
 						$sql0  	= "SELECT  count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst = 0 and ptdVM = $usuID GROUP BY ptID ";
 						$sql 	= "SELECT  count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst >= 1 and ptdEst < 8 and ptdEst <> 2 and ptdRes = $usuID GROUP BY ptID ";
 						$sql2  	= "SELECT  count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst = 6 and ptdRes = $usuID GROUP BY ptID";
-						$sql3   = "SELECT  count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst = 4 and ptdRes = $usuID GROUP BY ptID";
+						$sql3   = "SELECT  count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst = 4 and ptdRes = $usuID";
 					    if($paisID==7){
 							$tit 	= "Meus Pedidos";
 							$tit2 	= "Entregas Agendadas";
 							$tit3 	= "Cotações Pendentes";
 					    }else{
 							$tit 	= "Mis Pedidos";
-							$tit2 	= "Entregas Programadas";
+							$tit2 	= "Pedidos Ongoing";
 							$tit3 	= "Cotizaciones Pendientes";
 					    } 			
 					}elseif($usuTipo==3){ // VM
@@ -116,7 +119,7 @@ if($_SESSION['todos']['Logged']){
 							$tit2 	= "Entregas Agendadas";
 					    }else{
 							$tit 	= "Mis Pendientes";
-							$tit2 	= "Entregas Programadas";
+							$tit2 	= "Pedidos Ongoing";
 					    } 	
 					}elseif($usuTipo==4){ // Proveedor
 						$ptdProv = get_proveedor_usuario($usuID);
@@ -135,7 +138,7 @@ if($_SESSION['todos']['Logged']){
 					}		
 						
 					?>	
-					
+					<?php //echo $sql3; ?>
 					<? if($usuTipo<4){ ?>
 
 <?					
@@ -144,7 +147,8 @@ if($_SESSION['todos']['Logged']){
 						foreach ($resultado0 as $r0) {
 							$total0++;
 						}
-					}			
+					}	
+							
 ?>		
 
 
@@ -172,11 +176,11 @@ if($_SESSION['todos']['Logged']){
 							
 <?					
 					}		
-					if($usuTipo==2 || $usuTipo==4){
+					if($usuTipo<=2 || $usuTipo==4){
 						$resultado3 = $db->rawQuery($sql3);
 						if($resultado3){
 							foreach ($resultado3 as $r3) {
-								$total3 = $r3['total'];
+								$total3 = $r3['Total'];
 							}
 						}				
 ?>					
@@ -191,7 +195,7 @@ if($_SESSION['todos']['Logged']){
 					$resultado2 = $db->rawQuery($sql2);
 					if($resultado2){
 						foreach ($resultado2 as $r2) {
-							$total2 = $r2['total'];
+							$total2 = $r2['Total'];
 						}
 					}			
 ?>								
