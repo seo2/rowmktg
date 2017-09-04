@@ -290,9 +290,9 @@
 							$pieza_opc_desc = get_instore_opc_desc_v2($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
 							
 							if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
-								$pieza = '<small>'.get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais_v2($paisID, $r['formID'], $r['ptdGra']);
+								$pieza = get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']);
 							}else{
-								$pieza = '<small>'.get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais_v2($paisID, $r['formID'], $r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
+								$pieza = get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '<br>' . $pieza_opc_desc;
 							}
 						}
 

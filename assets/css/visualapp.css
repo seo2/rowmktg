@@ -32,8 +32,8 @@ h2.home{color: #fff; font-size: 16px;}
 .has-error .form-control,
 .has-error .form-control:focus{ border-color: #a94442;}
 .has-success .form-control, 
-.has-success .form-control:focus { border-color: #D2142B;}
-.has-success .form-control-feedback{color:#D2142B; }
+.has-success .form-control:focus { border-color: #000;}
+.has-success .form-control-feedback{color:#000; }
 
 #home{background: url(../img/background-home.png) center top; width: 100%; height: 100%; color: #fff;}
 
@@ -114,7 +114,7 @@ border-radius: 0;border-left: 0;}
 
 .btn-primary{ background: #D2142B; border: none; border-radius: 0; width: 100%; height: 49px; letter-spacing: 1px; padding: 0; line-height: 49px; font-weight: 100; font-size: 14px; }
 .btn-primary:hover, .btn-primary:focus{background: #000;}
-.btn-default{background: #D2142B;border: none; border-radius: 0; margin-left: 10px; font-weight: lighter; color: #fff;}
+.btn-default{background: #333;border: none; border-radius: 0; margin-left: 10px; font-weight: lighter; color: #fff;}
 .btn-danger{border: none;}
 .btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled], .btn-primary[disabled].active, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover {
     background-color: #000;
@@ -137,7 +137,7 @@ border-radius: 0;border-left: 0;}
 #posiciones{padding-top: 40px;}
 .posicion{background: #fff;padding-top: 5px; padding-bottom: 5px; border-top: 1px solid #CCC; position: relative;}
 .posicion:hover{background: #f9f9f9;}
-.conpedido{background: rgba(215, 240, 255, 1);border-top: 1px solid #fff;}
+.conpedido{background: #F4BFC6;border-top: 1px solid #fff;}
 .posicion.buscar{background: #fff;padding-top: 0; padding-bottom: 0; border-top: none; position: relative;}
 .posicion.buscar form{margin: 5px;}
 .posicion.buscar form .btn-default{border: 1px solid #D2142B;}

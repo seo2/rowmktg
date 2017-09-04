@@ -53,9 +53,9 @@ if($_POST['ptID'] && $_POST['ptdItem'] && $_POST['ptoID']){
 
 if($estfin==2){
 	$subject = 'Se ha rechazado un ítem del Pedido Nº '.$pdID;
-	$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Onretail Wholesale Marketing" . "\r\n";
+	$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Own Retail Wholesale Marketing" . "\r\n";
 	//$headers .= "Reply-To: ". "seo2@seo2.cl" . "\r\n";
-	$headers .= "CC: mc@seo2.cl\r\n";
+	$headers .= "CC: adidas@seo2.cl\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 		

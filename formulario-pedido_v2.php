@@ -77,6 +77,7 @@ session_start();
 				<div class="col-xs-12 col-md-6 col-md-offset-3 posicion" id="vit-<?= $r['vitID']; ?>" data-nom="<?= $r['vitNom']; ?>"  data-foto="<?= $r['vitFoto']; ?>" data-com="<?= $r['vitDes']; ?>">
 					<div class="row">
 						
+<!--
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="col-sm-12">
@@ -105,6 +106,7 @@ session_start();
 								</div>
 							</div>
 						</div>
+-->
 						<? if($ptdISC=='fw2017'){ ?>
 						<form action="ajax/graba-pedido-campana.php" method="post" accept-charset="utf-8" id="agrega-pedido" <?php echo $hide1; ?>>
 							<input type="hidden" name="ptVM" 						value="<?= $usuID; ?>">
@@ -217,7 +219,7 @@ session_start();
 						</div>
 						</form> <!-- fin form pedido ISC Long Term -->
 						<? }else{ ?>
-						<form action="ajax/graba-pedido.php" method="post" accept-charset="utf-8" id="agrega-pedido" <?php echo $hide1; ?>>
+						<form action="ajax/graba-pedido.php" method="post" accept-charset="utf-8" id="agrega-pedido" >
 							<input type="hidden" name="ptVM" 						value="<?= $usuID; ?>">
 							<input type="hidden" name="paisID" 		id="paisID" 	value="<?= $paisID; ?>">
 							<input type="hidden" name="ptTie" 		id="ptTie" 		value="<?= $tieID; ?>">
@@ -233,11 +235,11 @@ session_start();
 								<select class="form-control" name="ptdGra" required id="ptdGra2" data-formato="<?php echo $formato; ?>">
 									<option value=""><? if($paisID==7){ ?>Selecionar<? }else{ ?>Seleccione<? } ?></option>
 									<?
-									$tema = $db->rawQuery('select * from instores_v2 where formID = '.$formato.' order by insNomGen');
+									$tema = $db->rawQuery('select * from instores_v2 where formID = '.$formato.' and insEst = 0 order by insNomGen');
 									if($tema){
 										foreach ($tema as $t) {
 											$insID 		= $t['insID'];
-											$instore 	= $t['insNomGen'].' - '.get_instore_nom_x_pais_v2($paisID, $formato, $insID);
+											$instore 	= $t['insNomGen'];
 											
 									?>
 									<option value="<?= $t['insID']; ?>" <? if($t['insID']==$ptdGra){ ?>selected<? } ?>><?php echo $instore; ?></option>
@@ -253,7 +255,7 @@ session_start();
 								<label><? if($paisID==7){ ?>Opções<? }else{ ?>Opciones<? } ?> instore:</label>
 								<select class="form-control" name="ptdGraOp" id="ptdGraOp2" required>
 									<?
-									$tema = $db->rawQuery('select * from instores_opciones_v2 where  formID = '.$formato.' and insID = '.$ptdGra);
+									$tema = $db->rawQuery('select * from instores_opciones_v2 where  formID = '.$formato.' and insID = '.$ptdGra.' and insOPEst = 0');
 									if($tema){
 										foreach ($tema as $t) {
 									?>							
@@ -277,7 +279,7 @@ session_start();
 							<div class="row">
 								<div class="col-xs-12">
 						    		<div id="fotito2">
-						    			<img src="<?php echo $ptdISC; ?>" class="img-responsive" id="fotocatalogo" >
+						    			<img src="<?php echo $ptdISC; ?>" class="img-responsive" id="fotocatalogo" style="max-height: 300px;">
 						    			<input type="hidden" name="isc" id="isc" value="<?php echo $ptdISC; ?>">
 						    		</div>
 						    	</div>	
@@ -286,7 +288,7 @@ session_start();
 							<div class="row">
 								<div class="col-xs-12">
 						    		<div id="fotito2"  style="display:none;">
-						    			<img src="" class="img-responsive" id="fotocatalogo" >
+						    			<img src="" class="img-responsive" id="fotocatalogo"  style="max-height: 300px;">
 						    			<input type="hidden" name="isc" id="isc">
 						    		</div>
 						    	</div>	

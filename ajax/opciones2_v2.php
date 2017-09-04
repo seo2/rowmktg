@@ -15,7 +15,7 @@ if($resultado){
 	}
 }
 $ok = 0;
-$resultado = $db->rawQuery('SELECT * FROM instores_opciones_v2 WHERE formID = '.$formID.' and insID = '.$insID.' and insOpID = '.$insOpID);
+$resultado = $db->rawQuery('SELECT * FROM instores_opciones_v2 WHERE formID = '.$formID.' and insID = '.$insID.' and insOpID = '.$insOpID.' and insOPEst = 0');
 
 if($resultado){
 	foreach ($resultado as $r) {

@@ -23,8 +23,8 @@
 					
 	$subject = 'Pedidos VM '.$date.'';
 	
-	$headers = "From: Reebok Onretail Wholesale Marketing <no-reply@rowmktg.cl>\r\n";
-	$headers .= "CC: mc@seo2.cl\r\n";
+	$headers = "From: Reebok Own Retail Wholesale Marketing <no-reply@rowmktg.cl>\r\n";
+	$headers .= "Bcc: adidas@seo2.cl\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
@@ -72,19 +72,24 @@
 						
 							$fecen = substr($r['ptdFecEn'],8,2) . '/'. substr($r['ptdFecEn'],5,2) .'/'. substr($r['ptdFecEn'],0,4);
 						
-							$pieza_opc_desc = get_instore_opc_desc($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
+							if($r['ptdISC']=='fw2017'){
+								$pieza   = get_isc_camp($formID,$r['ptdGra']) .'<br><small>'.get_isc_med($formID,$r['ptdGra']).'</small>';
+							}else{		
 							
-							if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
-								$pieza = get_instore_nom_gen( $r['formID'], $r['ptdGra']) . ' - ' . get_instore_nom_x_pais($paisID, $r['formID'], $r['ptdGra']);
-							}else{
-								$pieza = get_instore_nom_gen( $r['formID'], $r['ptdGra']) . ' - ' . get_instore_nom_x_pais($paisID, $r['formID'], $r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
+								$pieza_opc_desc = get_instore_opc_desc_v2($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
+								
+								if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
+									$pieza = get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']);
+								}else{
+									$pieza = get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . ' | ' . $pieza_opc_desc;
+								}
 							}
-	
+							
 							$estado = get_desc_estado($r['ptdEst']);
 							$clase  = get_class_estado($r['ptdEst']);
 											
 							$message .= "<div style='border-bottom: 1px solid #ccc; padding: 0 0 10px 0; margin-bottom:10px; font-size:12px;' >";
-							$message .= "<div style='margin-bottom:5px; font-size:14px;'>Instore: <strong>". $pieza."</strong></div>";
+							$message .= "<div style='margin-bottom:5px; font-size:14px;'>Instore: <strong>". utf8_decode($pieza)."</strong></div>";
 
 						    if($paisID==7){
 								$message .= "<div  style='margin-bottom:5px;'><span>Quantidade: <strong>".$r['ptdCan']."</strong></div>";
@@ -189,7 +194,7 @@
 				echo $to;
 				echo $message;
 */
-				$to		= 'seodos@gmail.com';
+				//$to		= 'seodos@gmail.com';
 				mail($to, $subject, $message, $headers);
 			}
 

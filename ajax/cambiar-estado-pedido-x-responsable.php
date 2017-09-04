@@ -165,14 +165,14 @@ if($estini == 4 && $estfin == 3){
 			$message .= "</body></html>";
 			
 			$subject = 'Cotización Rechazada Pedido Nº '.$pdID;
-			$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Onretail Wholesale Marketing" . "\r\n";
+			$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Own Retail Wholesale Marketing" . "\r\n";
 
 			if($provMail){
 				$headers .= "CC: ".$provMail."\r\n";
 			}
 
 
-			$headers .= "Bcc: mc@seo2.cl\r\n";
+			$headers .= "Bcc: adidas@seo2.cl\r\n";
 			$headers .= "MIME-Version: 1.0\r\n";
 			$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 

@@ -65,7 +65,7 @@ session_start();
 					<div class="row">
 					
 						<form action="ajax/graba-pieza-opciones_v2.php" method="post" accept-charset="utf-8" id="formPieOp">
-							<fieldset <? if($usuTipo!=99){ ?>disabled<? } ?> >
+							<fieldset <? if($usuTipo>2 && $usuTipo<99){ ?>disabled<? } ?> >
 								<div class="form-group">
 									<label for="ptdGra">Formato</label>
 									<input type="text" class="form-control" id="formDesc"  name="formDesc" value="<?= $formDesc; ?>" readonly>
@@ -77,7 +77,7 @@ session_start();
 								</div>
 								<div class="form-group">
 									<label class="ptdCan">Nombre:</label>
-									<input type="text" class="form-control" id="opcDesc" placeholder="Nombre de la opción" name="insOpNom" value="<?= $opcDesc; ?>" required <? if($usuTipo!=99){ ?>disabled<? } ?>>
+									<input type="text" class="form-control" id="opcDesc" placeholder="Nombre de la opción" name="insOpNom" value="<?= $opcDesc; ?>" required <? if($usuTipo>2 && $usuTipo<99){ ?>disabled<? } ?>>
 									<? if($_GET['insOpID'] ){?>
 									<input type="hidden" name="insOpID" 	value="<?= $opcID; ?>">
 									<? } ?>
@@ -98,7 +98,7 @@ session_start();
 									    		</div>
 									    	</div>	
 										</div>
-											<? if($usuTipo==99){ ?>
+											<? if($usuTipo>2 && $usuTipo<99){ ?>
 										<div class="form-group">
 											<div class="row">
 												<div class="col-xs-offset-3 col-xs-6">
@@ -118,7 +118,7 @@ session_start();
 									    		</div>
 									    	</div>	
 										</div>
-											<? if($usuTipo==99){ ?>
+											<? if($usuTipo>2 && $usuTipo<99){ ?>
 										<div class="form-group">
 											<div class="row">
 												<div class="col-xs-offset-3 col-xs-6">
@@ -141,7 +141,7 @@ session_start();
 									    		</div>
 									    	</div>	
 										</div>
-											<? if($usuTipo==99){ ?>
+											<? if($usuTipo>2 && $usuTipo<99){ ?>
 										<div class="form-group">
 											<div class="row">
 												<div class="col-xs-offset-3 col-xs-6">
@@ -166,13 +166,13 @@ session_start();
 								</div>										
 								<div class="form-group">
 									<label for="ptdGra">Estado:</label>
-									<select class="form-control" name="insOPEst" required id="opcEst" <? if($usuTipo!=99){ ?>disabled<? } ?>>
+									<select class="form-control" name="insOPEst" required id="opcEst" <? if($usuTipo>2 && $usuTipo<99){ ?>disabled<? } ?>>
 										<option value="0" <? if($opcEst==0){ ?>selected<? } ?>>Activo</option>
 										<option value="1" <? if($opcEst==1){ ?>selected<? } ?>>Inactivo</option>
 									</select>
 								</div>			
 								<hr>
-								<? if($usuTipo==99){ ?>
+								<? if($usuTipo<=2 || $usuTipo==99){ ?>
 								<div class="form-group text-right">
 							    	<button type="submit" class="btn btn-primary" id="btngrabar"><i class="fa fa-floppy-o"></i> Grabar</button>
 								</div>

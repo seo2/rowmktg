@@ -29,10 +29,10 @@ $ptdProv 	= $_POST['ptdProv'];
     if($paisID==7){
 		$subject = 'Cota&ccedil;&atilde;o de Pedido N&ordm; '.$ptID;
     }else{
-		$subject = 'Cotizaci&oacute;n Pedido N&ordm; '.$ptID;
+		$subject = 'Cotización Pedido Nº '.$ptID;
     } 
-	$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Onretail Wholesale Marketing" . "\r\n";
-	$headers .= "CC: mc@seo2.cl\r\n";
+	$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Own Retail Wholesale Marketing" . "\r\n";
+	$headers .= "BCC: adidas@seo2.cl\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
@@ -54,7 +54,7 @@ $ptdProv 	= $_POST['ptdProv'];
 			
 			$usuId 		= $u['ptdRes'];
 			$to			= $mailresponsable;
-			$to		    = 'seodos@gmail.com';
+			//$to		    = 'seodos@gmail.com';
 			
 			$i 		= 0;
 				
@@ -90,12 +90,17 @@ $ptdProv 	= $_POST['ptdProv'];
 						
 							$fecen = substr($r['ptdFecEn'],8,2) . '/'. substr($r['ptdFecEn'],5,2) .'/'. substr($r['ptdFecEn'],0,4);
 						
-							$pieza_opc_desc = get_instore_opc_desc($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
+							if($r['ptdISC']=='fw2017'){
+								$pieza   = get_isc_camp($formID,$r['ptdGra']) .'<br><small>'.get_isc_med($formID,$r['ptdGra']).'</small>';
+							}else{		
 							
-							if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
-								$pieza = get_instore_nom_gen( $r['formID'], $r['ptdGra']) . ' - ' . get_instore_nom_x_pais($paisID, $r['formID'], $r['ptdGra']);
-							}else{
-								$pieza = get_instore_nom_gen( $r['formID'], $r['ptdGra']) . ' - ' . get_instore_nom_x_pais($paisID, $r['formID'], $r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
+								$pieza_opc_desc = get_instore_opc_desc_v2($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
+								
+								if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
+									$pieza = get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']);
+								}else{
+									$pieza = get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . ' | ' . $pieza_opc_desc;
+								}
 							}
 	
 							$estado = get_desc_estado($r['ptdEst']);

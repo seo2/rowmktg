@@ -80,7 +80,7 @@ session_start();
 						</div>
 						<div class="col-xs-3 text-right posvotos">
 							<a href="formulario-pieza-opciones_v2.php?formID=<?= $formID; ?>&insID=<?= $pieID; ?>&insOpID=<?= $r['insOpID']; ?>" class="btn btn-default">
-							<? if($usuTipo==99){ ?>
+							<? if($usuTipo==99 || $usuTipo <= 2){ ?>
 								<i class="fa fa-edit"></i>
 							<? }else{ ?>
 								<i class="fa fa-eye"></i>

@@ -32,7 +32,7 @@ $res = setcookie("id", '', time()-3600, "/ajax/", "seo2.cl");
 			    	
 				
 				<h1 class="logo animated fadeIn"><img src="assets/img/rbk.svg" style="margin:10px 0;"></h1>
-				<p class="logo animated fadeInDown">On retail & Wholesale Marketing</p>
+				<p class="logo animated fadeInDown">Own retail & Wholesale Marketing</p>
 				<br>
 			    	<? if($_GET['restaurado']){ ?>
 			    	<p>Tu contraseña ha sido cambiada.</p>

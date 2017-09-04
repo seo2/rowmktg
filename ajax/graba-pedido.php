@@ -8,7 +8,9 @@ $ptVM		= $_POST['ptVM'];
 $ptTie		= $_POST['ptTie'];
 $ptdGra		= $_POST['ptdGra'];
 $ptdGraOp	= $_POST['ptdGraOp'];
-$ptdProv	= $_POST['pieProv'];
+if($formID==14){
+	$ptdProv	= 1;
+}
 $ptdCat		= $_POST['ptdCat'];
 $ptdCan		= $_POST['ptdCan'];
 $ptdObs		= $_POST['ptdObs'];
@@ -18,7 +20,7 @@ $ptdISC		= $_POST['isc'];
 
 
 	$formInstore = $formID;
-	$ptdProv   = 0;
+	//$ptdProv   = 0;
 
 if($paisID==1){
 	date_default_timezone_set('America/Santiago');

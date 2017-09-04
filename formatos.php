@@ -50,7 +50,7 @@ if($_GET['FW2017']){
 			    	<div class="col-xs-6">
 						<h2>Formatos</h2>
 			    	</div>
-					<? if($usuTipo == 99){ ?>
+					<? if($usuTipo <= 2){ ?>
 			    	<div class="col-xs-6 text-right">
 						<a href="formulario-formatos.php" class="btn btn-default"><span class="hidden-xs">Agregar </span><i class="fa fa-plus-circle"></i></a>
 			    	</div>

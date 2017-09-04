@@ -55,7 +55,7 @@ if($_SESSION['todos']['Logged']){
 						//$sql  = "select * from instores where formID = $formID and pieRes = $usuID";
 						$sql  = "select * from instores_v2 where formID = $formID order by insNomGen";
 					}
-				}elseif($usuTipo == 99){
+				}elseif($usuTipo == 99 || $usuTipo <= 2){
 					$sql  = "select * from instores_v2 where formID = $formID order by insNomGen";
 				}
 
@@ -90,7 +90,7 @@ if($_SESSION['todos']['Logged']){
 						</div>
 						<div class="col-xs-3 text-right posvotos">
 							<a href="formulario-pieza_v2.php?pieID=<?= $r['insID']; ?>&formID=<?= $formID; ?>" class="btn btn-default ">
-							<? if($usuTipo==99){ ?>
+							<? if($usuTipo==99 || $usuTipo <= 2){ ?>
 								<i class="fa fa-edit"></i>
 							<? }else{ ?>
 								<i class="fa fa-eye"></i>

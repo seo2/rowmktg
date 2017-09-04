@@ -39,7 +39,7 @@ session_start();
     <div class="container" id="argumentos">
 	    
 		<header>
-		    <span><? if($paisID==7){ ?>Pedido atual<? }else{ ?>Pedido Actual<? } ?></span>
+		    <span><?php echo get_formato($formID); ?> | <? if($paisID==7){ ?>Pedido atual<? }else{ ?>Pedido Actual<? } ?></span>
 	    </header>
 
 		    <div id="cajaposiciones" data-eveID="<?= $eveID; ?>" data-tiendaID="<?= $tieID; ?>">
@@ -97,9 +97,9 @@ session_start();
 							$pieza_opc_desc = get_instore_opc_desc_v2($r['formID'], $r['ptdGra'], $r['ptdGraOp']);
 							
 							if($pieza_opc_desc=='-' || $pieza_opc_desc==''){
-								$pieza = '<small>'.get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais_v2($paisID, $r['formID'], $r['ptdGra']);
+								$pieza = get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']);
 							}else{
-								$pieza = '<small>'.get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '</small><br>' . get_instore_nom_x_pais_v2($paisID, $r['formID'], $r['ptdGra']) . ' [' . $pieza_opc_desc . '] ';
+								$pieza = get_instore_nom_gen_v2( $r['formID'], $r['ptdGra']) . '<br>' . $pieza_opc_desc;
 							}
 						}
 

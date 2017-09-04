@@ -36,11 +36,13 @@ global $usuID;
 				<div class="col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1 cajita" >
 				
 				<h1 class="logo animated fadeIn"><img src="assets/img/rbk.svg" style="margin:10px 0;"></h1>
-				<p class="logo animated fadeInDown">Onretail Wholesale Marketing</p>
+				<p class="logo animated fadeInDown">Own Retail Wholesale Marketing</p>
 
 					<? if($tipo<3){ ?>
+<!--
 						<a href="campana_v2.php" class="btn btn-primary btn-lg btn-block">ISC de Campañas</a>
 						<br>
+-->
 						<a href="formatos.php?piezas=1&FW2017=1" class="btn btn-primary btn-lg btn-block">ISC Long Term</a>
 						<hr>
 					<? if($tipo<=2){ ?>

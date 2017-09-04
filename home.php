@@ -40,7 +40,7 @@ if($_SESSION['todos']['Logged']){
 				<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 cajita" >
 				
 				<h1 class="logo animated fadeIn"><img src="assets/img/rbk.svg" style="margin:10px 0;"></h1>
-				<p class="logo animated fadeInDown">Onretail Wholesale Marketing</p>
+				<p class="logo animated fadeInDown">Own Retail Wholesale Marketing</p>
 					<?
 					// 	QUERIES PARA SACAR TOTAL DE PEDIDOS:
 
@@ -84,7 +84,7 @@ if($_SESSION['todos']['Logged']){
 					
 					if($usuTipo==1){ // administrador
 						$sql0  	= "SELECT count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst = 0 GROUP BY ptID ";
-						$sql  	= "SELECT count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst >= 1 and ptdEst < 8 and ptdEst <> 2 GROUP BY ptID ";
+						$sql  	= "SELECT count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst >= 1 and ptdEst < 8 and ptdEst <> 2 ";
 						$sql2  	= "SELECT count(*) as Total FROM pedido_temporal_detalle WHERE paisID = $paisID and ptdEst = 6";
 					    if($paisID==7){
 							$tit 	= "Pedidos";
@@ -176,7 +176,7 @@ if($_SESSION['todos']['Logged']){
 						$resultado3 = $db->rawQuery($sql3);
 						if($resultado3){
 							foreach ($resultado3 as $r3) {
-								$total3 == $r3['total'];
+								$total3 = $r3['total'];
 							}
 						}				
 ?>					
@@ -191,7 +191,7 @@ if($_SESSION['todos']['Logged']){
 					$resultado2 = $db->rawQuery($sql2);
 					if($resultado2){
 						foreach ($resultado2 as $r2) {
-							$total2 == $r2['total'];
+							$total2 = $r2['total'];
 						}
 					}			
 ?>								

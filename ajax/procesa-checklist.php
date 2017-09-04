@@ -56,7 +56,7 @@ if ($ajax) {
 	
 		$to = get_user_mail($clxtMM);
 		
-		$to = 'seodos@gmail.com';
+		//$to = 'seodos@gmail.com';
 		
 		$tienda 	= get_tienda($clxtTie);
 		$checklist 	= get_checklist_nom($clxtCL);
@@ -66,8 +66,8 @@ if ($ajax) {
 		$hora  		= substr($clxtTs,11,8);
 						
 		$subject = 'Checklist '.$clxtID.': '.$tienda.' - '.$checklist.' '.$date.'';
-		$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Onretail Wholesale Marketing" . "\r\n";
-		$headers .= "CC: mc@seo2.cl\r\n";
+		$headers = "From: " . "<no-reply@rowmktg.cl> Reebok Own Retail Wholesale Marketing" . "\r\n";
+		$headers .= "BCC: adidas@seo2.cl\r\n";
 		$headers .= "MIME-Version: 1.0\r\n";
 		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
